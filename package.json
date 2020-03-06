@@ -1,0 +1,14 @@
+{
+  "name": "certificheck",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "mailgun-js": "^0.22.0",
+    "ssl-checker": "^2.0.4"
+  },
+  "devDependencies": {}
+}
