@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "mailgun-js": "^0.22.0",
-    "ssl-checker": "^2.0.4"
-  },
-  "devDependencies": {}
+    "ssl-checker": "^2.0.7"
+  }
 }
