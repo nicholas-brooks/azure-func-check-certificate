@@ -1,9 +1,13 @@
-const Mailgun = require("mailgun-js");
+const formData = require("form-data");
+const Mailgun = require("mailgun.js");
 
 class EmailService {
   constructor(apiKey, domain, from) {
     this.from = from;
-    this.mailgun = new Mailgun({ apiKey: apiKey, domain: domain });
+    const mg = new Mailgun(formData);
+    this.domain = domain;
+    this.mailgun = mg.client({ username: 'api', key: apiKey });
+
   }
 
   async sendOkEmail(to, certificate) {
@@ -54,11 +58,13 @@ issuer: ${error.errorCode}`
   }
 
   async sendEmail(email) {
-    await this.mailgun.messages().send(email, err => {
-      if (err) {
-        console.error("error sending email: ", err);
-      }
-    });
+    try
+    {
+      await this.mailgun.messages.create(this.domain, email);
+    }
+    catch (e) {
+      console.error("error sending email: ", e);
+    }
   }
 }
 
