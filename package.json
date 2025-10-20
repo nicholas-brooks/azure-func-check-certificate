@@ -9,7 +9,7 @@
   "dependencies": {
     "form-data": "^4.0.4",
     "mailgun.js": "^9.4.1",
-    "ssl-checker": "^2.0.8"
+    "ssl-checker": "^2.0.10"
   },
   "engines": {
     "node": ">=20.0.0"
